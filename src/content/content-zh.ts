@@ -10,24 +10,27 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "合并PDF",
-    description: "将多个PDF文件合并成一个文档",
-    color: "var(--red)",
+  Markdown_to_PDF: {
+    title: "Markdown 转 PDF",
+    description: "将 Markdown 转换为 PDF",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/markdown-to-pdf",
   },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": ["PDF文件已合并！", "PDF文件已合并！"],
+    "markdown-to-pdf": [
+      "Markdown文件已转换为PDF！",
+      "Markdown文件已转换为PDF！",
+    ],
   },
   btnText: {
-    "merge-pdf": ["下载合并后的PDF文件", "下载合并后的PDF文件"],
+    "markdown-to-pdf": ["下载转换后的PDF文件", "下载转换后的PDF文件"],
   },
   backto: {
-    "merge-pdf": "返回合并PDF",
+    "markdown-to-pdf": "返回Markdown转PDF",
   },
 };
 

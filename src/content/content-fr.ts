@@ -10,12 +10,12 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "Fusionner des PDF",
-    description: "Combinez plusieurs fichiers PDF en un seul document",
-    color: "var(--red)",
+  Markdown_to_PDF: {
+    title: "Markdown en PDF",
+    description: "Convertir des fichiers Markdown en documents PDF",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/markdown-to-pdf",
   },
 };
 
@@ -28,19 +28,19 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "Fusion de fichiers PDF réussie !",
-      "Fusion de fichier PDF réussie !",
+    "markdown-to-pdf": [
+      "Conversion de fichiers Markdown en PDF réussie !",
+      "Conversion de fichier Markdown en PDF réussie !",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "Télécharger les fichiers PDF fusionnés",
-      "Télécharger le fichier PDF fusionné",
+    "markdown-to-pdf": [
+      "Télécharger les fichiers PDF convertis",
+      "Télécharger le fichier PDF converti",
     ],
   },
   backto: {
-    "merge-pdf": "Retour à Fusionner PDF",
+    "markdown-to-pdf": "Retour à Markdown vers PDF",
   },
 };
 

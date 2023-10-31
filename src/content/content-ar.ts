@@ -9,13 +9,14 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "دمج PDF",
-    description: "دمج ملفات PDF متعددة في مستند واحد",
-    color: "var(--red)",
+  Markdown_to_PDF: {
+    title: "تحويل النص بتنسيق ماركداون إلى ملف PDF",
+    description: "تحويل النص بتنسيق ماركداون إلى ملف PDF",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/markdown-to-pdf",
   },
+
 };
 
 export const tools: _tools = {
@@ -27,13 +28,16 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": ["تم دمج ملفات ال PDF!", "تم دمج ملف ال PDF!"],
+    "markdown-to-pdf": [
+      "تم تحويل ملفات Markdown إلى PDF!",
+      "تم تحويل ملف Markdown إلى PDF!",
+    ],
   },
   btnText: {
-    "merge-pdf": ["تحميل ملفات PDF المدموجة", "تحميل ملف PDF مدموج"],
+    "markdown-to-pdf": ["تحميل ملفات PDF المحولة", "تحميل ملف PDF المحول"],
   },
   backto: {
-    "merge-pdf": "العودة إلى دمج ملفات PDF",
+    "markdown-to-pdf": "العودة إلى Markdown إلى PDF",
   },
 };
 

@@ -36,30 +36,30 @@ export const nav_content = {
   pdf_to_markdown: "PDF से मार्कडाउन तक",
 };
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "पीडीएफ विलय",
-    description: "एक दस्तावेज में कई पीडीएफ फ़ाइलों को जोड़ें",
-    color: "var(--red)",
+  Markdown_to_PDF: {
+    title: "Markdown से पीडीएफ में रूपांतरण",
+    description: "Markdown से पीडीएफ में रूपांतरण",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/markdown-to-pdf",
   },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "PDF फ़ाइलें मर्ज़ की गई हैं!",
-      "PDF फ़ाइल को मर्ज़ किया गया है!",
+    "markdown-to-pdf": [
+      "मार्कडाउन फ़ाइलें PDF में रूपांतरित की गईं!",
+      "मार्कडाउन फ़ाइल को PDF में रूपांतरित किया गया है!",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "मर्ज़ की गई PDF फ़ाइलें डाउनलोड करें",
-      "मर्ज़ की गई PDF फ़ाइल डाउनलोड करें",
+    "markdown-to-pdf": [
+      "PDF में रूपांतरित की गई मार्कडाउन फ़ाइलें डाउनलोड करें",
+      "PDF में रूपांतरित की गई मार्कडाउन फ़ाइल डाउनलोड करें",
     ],
   },
   backto: {
-    "merge-pdf": "मर्ज़ की गई PDF को वापस जाएं",
+    "markdown-to-pdf": "मार्कडाउन से PDF को वापस जाएं",
   },
 };
 

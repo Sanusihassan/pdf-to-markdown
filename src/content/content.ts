@@ -1,10 +1,10 @@
 export const tool = {
-  Merge_PDF: {
-    title: "Merge PDF",
-    description: "Combine multiple PDF files into one document",
-    color: "var(--red)",
+  Markdown_to_PDF: {
+    title: "Markdown to PDF",
+    description: "Convert Markdown to PDF",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/markdown-to-pdf",
   },
 };
 
@@ -31,15 +31,22 @@ export const tools = {
 
 export const downloadFile = {
   titles: {
-    "merge-pdf": ["PDF files have been merged!", "PDF file has been merged!"],
+    "markdown-to-pdf": [
+      "Markdown files have been converted to PDF!",
+      "Markdown file has been converted to PDF!",
+    ],
+
   },
 
   btnText: {
-    "merge-pdf": ["Download Merged PDF files", "Download Merged PDF file"],
+    "markdown-to-pdf": [
+      "Download Converted PDF files",
+      "Download Converted PDF file",
+    ],
   },
 
   backto: {
-    "merge-pdf": "Back To Merge PDF",
+    "markdown-to-pdf": "Back To Markdown to PDF",
   },
 };
 
