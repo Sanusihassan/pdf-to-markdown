@@ -24,17 +24,18 @@ import {
   setPath,
   // ToolState
 } from "../../src/store";
+import { getNavContent } from "./getNavContent";
 
 const ConvertPDFDropdown = ({
   langPath,
   handleClick,
-  nav_content,
+  lang,
 }: {
   langPath: string;
   handleClick: () => void;
-  nav_content: nav_content;
+  lang: string;
 }) => {
-  //
+  const nav_content = getNavContent(lang);
   const dispatch = useDispatch();
   return (
     <>

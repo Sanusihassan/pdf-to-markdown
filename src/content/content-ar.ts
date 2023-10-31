@@ -16,7 +16,13 @@ export const tool: _tool = {
     type: ".pdf",
     to: "/markdown-to-pdf",
   },
-
+  PDF_to_Markdown: {
+    title: "PDF إلى Markdown",
+    description: "تحويل ملفات PDF إلى تنسيق Markdown",
+    color: "#FF4136",
+    type: ".pdf",
+    to: "/pdf-to-markdown",
+  },
 };
 
 export const tools: _tools = {
@@ -32,12 +38,21 @@ export const downloadFile: _downloadFile = {
       "تم تحويل ملفات Markdown إلى PDF!",
       "تم تحويل ملف Markdown إلى PDF!",
     ],
+    "pdf-to-markdown": [
+      "تم تحويل ملفات PDF إلى Markdown!",
+      "تم تحويل ملف PDF إلى Markdown!",
+    ],
   },
   btnText: {
     "markdown-to-pdf": ["تحميل ملفات PDF المحولة", "تحميل ملف PDF المحول"],
+    "pdf-to-markdown": [
+      "تحميل ملفات Markdown المحولة",
+      "تحميل ملف Markdown المحول",
+    ],
   },
   backto: {
     "markdown-to-pdf": "العودة إلى Markdown إلى PDF",
+    "pdf-to-markdown": "العودة إلى PDF إلى Markdown",
   },
 };
 

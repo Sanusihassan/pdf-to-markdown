@@ -43,6 +43,13 @@ export const tool: _tool = {
     type: ".pdf",
     to: "/markdown-to-pdf",
   },
+  PDF_to_Markdown: {
+    title: "PDF से मार्कडाउन तक",
+    description: "PDF फ़ाइलों को मार्कडाउन प्रारूप में रूपांतरित करें",
+    color: "#FF4136",
+    type: ".pdf",
+    to: "/pdf-to-markdown",
+  },
 };
 
 export const downloadFile: _downloadFile = {
@@ -51,15 +58,24 @@ export const downloadFile: _downloadFile = {
       "मार्कडाउन फ़ाइलें PDF में रूपांतरित की गईं!",
       "मार्कडाउन फ़ाइल को PDF में रूपांतरित किया गया है!",
     ],
+    "pdf-to-markdown": [
+      "PDF फ़ाइलें मार्कडाउन में रूपांतरित की गईं!",
+      "PDF फ़ाइल को मार्कडाउन में रूपांतरित किया गया है!",
+    ],
   },
   btnText: {
     "markdown-to-pdf": [
       "PDF में रूपांतरित की गई मार्कडाउन फ़ाइलें डाउनलोड करें",
       "PDF में रूपांतरित की गई मार्कडाउन फ़ाइल डाउनलोड करें",
     ],
+    "pdf-to-markdown": [
+      "मार्कडाउन में रूपांतरित की गई PDF फ़ाइलें डाउनलोड करें",
+      "मार्कडाउन में रूपांतरित की गई PDF फ़ाइल डाउनलोड करें",
+    ],
   },
   backto: {
     "markdown-to-pdf": "मार्कडाउन से PDF को वापस जाएं",
+    "pdf-to-markdown": "PDF से मार्कडाउन को वापस जाएं",
   },
 };
 

@@ -6,6 +6,13 @@ export const tool = {
     type: ".pdf",
     to: "/markdown-to-pdf",
   },
+  PDF_to_Markdown: {
+    title: "PDF to Markdown",
+    description: "Convert PDF files to Markdown format",
+    color: "#FF4136",
+    type: ".pdf",
+    to: "/pdf-to-markdown",
+  },
 };
 
 export const edit_page = {
@@ -14,7 +21,6 @@ export const edit_page = {
   },
   loader_text: "please wait...",
   add_more_button: "Add more files",
-  // translate the values of this object to french.
   action_buttons: {
     merge_pdf: "Merge PDF",
   },
@@ -35,7 +41,10 @@ export const downloadFile = {
       "Markdown files have been converted to PDF!",
       "Markdown file has been converted to PDF!",
     ],
-
+    "pdf-to-markdown": [
+      "PDF files have been converted to Markdown!",
+      "PDF file has been converted to Markdown!",
+    ],
   },
 
   btnText: {
@@ -43,10 +52,15 @@ export const downloadFile = {
       "Download Converted PDF files",
       "Download Converted PDF file",
     ],
+    "pdf-to-markdown": [
+      "Download Converted Markdown files",
+      "Download Converted Markdown file",
+    ],
   },
 
   backto: {
     "markdown-to-pdf": "Back To Markdown to PDF",
+    "pdf-to-markdown": "Back To PDF to Markdown",
   },
 };
 

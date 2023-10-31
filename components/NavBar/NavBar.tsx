@@ -6,7 +6,6 @@ import ConvertPDFDropdown from "./ConvertDropDown";
 import LanguageDropdown from "./LanguageDropDown";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useFileStore } from "../../src/file-store";
 
 import {
   showTool,
@@ -17,9 +16,8 @@ import {
 } from "../../src/store";
 import { getNavContent } from "./getNavContent";
 
-
-
-const NavBar = ({ lang }: { lang: string }) => {
+const NavBar = ({ lang, files, setFiles }: { lang: string;files: File[];
+  setFiles: (files: FileList | File[]) => void; }) => {
   const navContent = getNavContent(lang);
   const dispatch = useDispatch();
   const statePath = useSelector(
@@ -27,7 +25,6 @@ const NavBar = ({ lang }: { lang: string }) => {
   );
   const router = useRouter();
   let path = router.asPath.replace(/^\/[a-z]{2}\//, "").replace(/^\//, "");
-  const { files, setFiles } = useFileStore.getState();
   function handleClick(): void {
     if (files.length > 0) {
       dispatch(showTool());
@@ -54,7 +51,7 @@ const NavBar = ({ lang }: { lang: string }) => {
       expand="lg"
       className={`${path !== "markdown-to-pdf" ? "shadow" : ""}`}
     >
-      <Link href={`/${lang}`}>
+      <Link href={`/${lang}`} legacyBehavior>
         <a
           onClick={(e) => {
             handleClick();
@@ -137,7 +134,7 @@ const NavBar = ({ lang }: { lang: string }) => {
           <ConvertPDFDropdown
             handleClick={handleClick}
             langPath={langPath}
-            nav_content={navContent}
+            lang={lang}
           />
           <LanguageDropdown />
         </Nav>

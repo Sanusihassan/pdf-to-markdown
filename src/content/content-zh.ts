@@ -17,6 +17,13 @@ export const tool: _tool = {
     type: ".pdf",
     to: "/markdown-to-pdf",
   },
+  PDF_to_Markdown: {
+    title: "PDF 转 Markdown",
+    description: "将 PDF 文件转换为 Markdown 格式",
+    color: "#FF4136",
+    type: ".pdf",
+    to: "/pdf-to-markdown",
+  },
 };
 
 export const downloadFile: _downloadFile = {
@@ -25,12 +32,18 @@ export const downloadFile: _downloadFile = {
       "Markdown文件已转换为PDF！",
       "Markdown文件已转换为PDF！",
     ],
+    "pdf-to-markdown": [
+      "PDF文件已转换为Markdown！",
+      "PDF文件已转换为Markdown！",
+    ],
   },
   btnText: {
     "markdown-to-pdf": ["下载转换后的PDF文件", "下载转换后的PDF文件"],
+    "pdf-to-markdown": ["下载转换后的Markdown文件", "下载转换后的Markdown文件"],
   },
   backto: {
     "markdown-to-pdf": "返回Markdown转PDF",
+    "pdf-to-markdown": "返回PDF转Markdown",
   },
 };
 

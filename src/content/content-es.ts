@@ -17,6 +17,13 @@ export const tool: _tool = {
     type: ".pdf",
     to: "/markdown-to-pdf",
   },
+  PDF_to_Markdown: {
+    title: "PDF a Markdown",
+    description: "Convierte archivos PDF al formato Markdown",
+    color: "#FF4136",
+    type: ".pdf",
+    to: "/pdf-to-markdown",
+  },
 };
 
 export const edit_page: _edit_page = {
@@ -45,15 +52,24 @@ export const downloadFile: _downloadFile = {
       "¡Conversión de archivos Markdown a PDF exitosa!",
       "¡Conversión de archivo Markdown a PDF exitosa!",
     ],
+    "pdf-to-markdown": [
+      "¡Conversión de archivos PDF a Markdown exitosa!",
+      "¡Conversión de archivo PDF a Markdown exitosa!",
+    ],
   },
   btnText: {
     "markdown-to-pdf": [
       "Descargar archivos PDF convertidos",
       "Descargar archivo PDF convertido",
     ],
+    "pdf-to-markdown": [
+      "Descargar archivos Markdown convertidos",
+      "Descargar archivo Markdown convertido",
+    ],
   },
   backto: {
     "markdown-to-pdf": "Volver a Markdown a PDF",
+    "pdf-to-markdown": "Volver a PDF a Markdown",
   },
 };
 
