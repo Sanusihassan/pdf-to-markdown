@@ -8,6 +8,7 @@ import {
   tools,
   downloadFile,
 } from "../src/content/content";
+import { useFileStore } from "@/src/file-store";
 
 type data_type = {
   title: string;
@@ -37,6 +38,7 @@ export async function getStaticProps({
 }
 
 export default ({ item }: { item: data_type }) => {
+  const { files, setFiles } = useFileStore.getState();
   return (
     <>
       <Head>
@@ -49,7 +51,7 @@ export default ({ item }: { item: data_type }) => {
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         />
       </Head>
-      <NavBar lang="" />
+      <NavBar setFiles={setFiles} files={files} lang="" />
       <Tool
         tools={tools}
         data={item}

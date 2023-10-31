@@ -1,43 +1,75 @@
-import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CodeEditor from "./CodeEditor";
 import { Spinner } from "react-bootstrap";
-// @ts-ignore
-import md from "./defaultcontent.md";
+// syntax hightlighting:
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
+interface CodeBlockProps {
+  language: string;
+  value: string;
+}
+
+const CodeBlock: React.FC<CodeBlockProps> = ({ language, value }) => {
+  return (
+    <SyntaxHighlighter style={solarizedlight} language={language}>
+      {value}
+    </SyntaxHighlighter>
+  );
+};
+
 const Loader = () => (
   <div className="editor-loader">
     <Spinner animation="grow" />
     <p className="lead">please wait...</p>
   </div>
 );
-
-const MonacoEditor = dynamic(() => import("react-monaco-editor"), {
-  ssr: false,
-  loading: () => <Loader />,
-});
+const components = {
+  code: ({ node, inline, className, children, ...props }: any) => {
+    const match = /language-(\w+)/.exec(className || "");
+    return !inline && match ? (
+      <CodeBlock
+        language={match[1]}
+        value={String(children).replace(/\n$/, "")}
+      />
+    ) : (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  },
+};
 
 const Markdown2PDF: React.FC = () => {
-  const [markdown, setMarkdown] = useState<string>(md);
-
-  const handleEditorChange = (value: string) => {
-    setMarkdown(value);
-  };
+  const [markdown, setMarkdown] = useState<string>("");
+  useEffect(() => {
+    (async () => {
+      const content = (await fetch("/defaultcontent.json")).json();
+      content.then((v) => {
+        setMarkdown(v.md);
+      });
+    })();
+  }, []);
+  const [showLoader, setShowLoader] = useState(true);
+  useEffect(() => {
+    setShowLoader(false);
+  }, []);
 
   return (
-    <div className="md-2pdf">
-      <div className="editor">
-        <MonacoEditor
-          language="markdown"
-          theme="vs-light"
-          value={markdown}
-          onChange={handleEditorChange}
-          options={{ selectOnLineNumbers: true }}
-        />
-      </div>
-      <div className="react-markdown-container">
-        <ReactMarkdown children={markdown} />
-      </div>
-    </div>
+    <>
+      {showLoader ? (
+        <Loader />
+      ) : (
+        <div className="md-2pdf">
+          <div className="editor">
+            <CodeEditor onChange={setMarkdown} />
+          </div>
+          <div className="react-markdown-container">
+            <ReactMarkdown components={components}>{markdown}</ReactMarkdown>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ import {
   downloadFile,
 } from "../../src/content/content-zh";
 import { errors } from "../../src/content/content-zh";
+import { useFileStore } from "@/src/file-store";
 
 type data_type = {
   title: string;
@@ -37,6 +38,7 @@ export async function getStaticProps({
 }
 
 export default ({ item, lang }: { item: data_type; lang: string }) => {
+  const { files, setFiles } = useFileStore.getState();
   return (
     <>
       <Head>
@@ -44,7 +46,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
         <meta name="description" content={item.description} />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <NavBar lang={lang} />
+      <NavBar setFiles={setFiles} files={files} lang={lang} />
       <Tool
         tools={tools}
         data={item}
