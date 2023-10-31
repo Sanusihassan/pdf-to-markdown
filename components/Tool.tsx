@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState, useContext } from "react";
 import { useDropzone } from "react-dropzone";
 
-import EditPage from "./EditPage";
+// import EditPage from "./EditPage";
 import { ToolState, hideTool, setPath, setShowDownloadBtn } from "../src/store";
 
 import { useRouter } from "next/router";
@@ -138,14 +138,14 @@ const Tool: React.FC<ToolProps> = ({
             <ErrorElement />
           </div>
           {/* ) : ( */}
-          <EditPage
+          {/* <EditPage
             extension={data.type}
             edit_page={edit_page}
             pages={pages}
             page={page}
             lang={lang}
             errors={errors}
-          />
+          /> */}
           <DownloadFile lang={lang} downloadFile={downloadFile} />
           {/* )} */}
         </div>

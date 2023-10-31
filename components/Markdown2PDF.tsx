@@ -1,22 +1,11 @@
+// the issue with this code is that the initial render of the component when the markdown is set from the json file that markdown is not highlighted.
 import ReactMarkdown from "react-markdown";
-import { useEffect, useState } from "react";
+import { LegacyRef, useEffect, useState } from "react";
 import CodeEditor from "./CodeEditor";
 import { Spinner } from "react-bootstrap";
 // syntax hightlighting:
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
-interface CodeBlockProps {
-  language: string;
-  value: string;
-}
-
-const CodeBlock: React.FC<CodeBlockProps> = ({ language, value }) => {
-  return (
-    <SyntaxHighlighter style={solarizedlight} language={language}>
-      {value}
-    </SyntaxHighlighter>
-  );
-};
+import dark from "react-syntax-highlighter/dist/cjs/styles/prism/dark";
 
 const Loader = () => (
   <div className="editor-loader">
@@ -24,21 +13,6 @@ const Loader = () => (
     <p className="lead">please wait...</p>
   </div>
 );
-const components = {
-  code: ({ node, inline, className, children, ...props }: any) => {
-    const match = /language-(\w+)/.exec(className || "");
-    return !inline && match ? (
-      <CodeBlock
-        language={match[1]}
-        value={String(children).replace(/\n$/, "")}
-      />
-    ) : (
-      <code className={className} {...props}>
-        {children}
-      </code>
-    );
-  },
-};
 
 const Markdown2PDF: React.FC = () => {
   const [markdown, setMarkdown] = useState<string>("");
@@ -48,6 +22,9 @@ const Markdown2PDF: React.FC = () => {
       content.then((v) => {
         setMarkdown(v.md);
       });
+      // if (containerRef.current) {
+      //   containerRef.current.scrollTop = 50;
+      // }
     })();
   }, []);
   const [showLoader, setShowLoader] = useState(true);
@@ -65,7 +42,29 @@ const Markdown2PDF: React.FC = () => {
             <CodeEditor onChange={setMarkdown} />
           </div>
           <div className="react-markdown-container">
-            <ReactMarkdown components={components}>{markdown}</ReactMarkdown>
+            <ReactMarkdown
+              children={markdown}
+              components={{
+                code(props) {
+                  const { children, className, node, ...rest } = props;
+                  const match = /language-(\w+)/.exec(className || "");
+                  return match ? (
+                    <SyntaxHighlighter
+                      {...rest}
+                      children={String(children).replace(/\n$/, "")}
+                      style={dark}
+                      language={match[1]}
+                      PreTag="div"
+                      ref={node as LegacyRef<SyntaxHighlighter> | undefined}
+                    />
+                  ) : (
+                    <code {...rest} className={className}>
+                      {children}
+                    </code>
+                  );
+                },
+              }}
+            />
           </div>
         </div>
       )}
