@@ -17,14 +17,17 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 const CodeEditor = ({
   onChange,
+  value,
 }: {
   onChange: Dispatch<SetStateAction<string>>;
+  value: string;
 }) => {
   const handleEditorChange = (value: string) => {
     onChange(value);
   };
 
   return (
+    // this is my react ace-editor i want to add a default value to it meaning the default text to show when it's initially loaded, then the user should change it after that:
     <AceEditor
       mode="markdown"
       theme="monokai"
@@ -37,6 +40,7 @@ const CodeEditor = ({
         enableSnippets: true,
       }}
       style={{ width: "100%", height: "500px" }}
+      value={value}
     />
   );
 };

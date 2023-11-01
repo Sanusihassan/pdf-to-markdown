@@ -39,7 +39,7 @@ const Markdown2PDF: React.FC = () => {
       ) : (
         <div className="md-2pdf">
           <div className="editor">
-            <CodeEditor onChange={setMarkdown} />
+            <CodeEditor value={markdown} onChange={setMarkdown} />
           </div>
           <div className="react-markdown-container">
             <ReactMarkdown
