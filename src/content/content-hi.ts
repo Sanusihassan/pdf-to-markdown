@@ -8,41 +8,7 @@ import type {
   downloadFile as _downloadFile,
   landing_page as _landing_page,
 } from "../../content";
-
-export const nav_content = {
-  // इसे अनदेखा करें
-  brand: "Equips",
-  merge_pdf: "पीडीएफ विलय करें",
-  split_pdf: "पीडीएफ विभाजित करें",
-  compress_pdf: "पीडीएफ संपीड़ित करें",
-  convert_pdf: "पीडीएफ परिवर्तित करें",
-  convert_to_pdf: "पीडीएफ में परिवर्तित करें",
-  jpg_to_pdf: "जेपीजी से पीडीएफ",
-  word_to_pdf: "शब्द से पीडीएफ",
-  markdown_to_pdf: "पीडीएफ में मार्कडाउन करें",
-  powerpoint_to_pdf: "पावरपॉइंट से पीडीएफ",
-  excel_to_pdf: "एक्सेल से पीडीएफ",
-  html_to_pdf: "एचटीएमएल से पीडीएफ",
-  web_to_pdf: "वेब से पीडीएफ",
-  convert_from_pdf: "पीडीएफ से परिवर्तित करें",
-  read_edit_pdf: "पीडीएफ पढ़ें और संपादित करें",
-  pdf_to_jpg: "पीडीएफ से जेपीजी",
-  pdf_to_word: "पीडीएफ से शब्द",
-  pdf_to_powerpoint: "पीडीएफ से पावरपॉइंट",
-  pdf_to_excel: "पीडीएफ से एक्सेल",
-  pdf_to_pdf_a: "पीडीएफ से पीडीएफ/ए",
-  pdf_to_text: "पाठ के लिए पीडीएफ",
-  pdf_to_html: "पीडीएफ से एचटीएमएल",
-  pdf_to_markdown: "PDF से मार्कडाउन तक",
-};
 export const tool: _tool = {
-  Markdown_to_PDF: {
-    title: "Markdown से पीडीएफ में रूपांतरण",
-    description: "Markdown से पीडीएफ में रूपांतरण",
-    color: "#6c5ce7",
-    type: ".pdf",
-    to: "/markdown-to-pdf",
-  },
   PDF_to_Markdown: {
     title: "PDF से मार्कडाउन तक",
     description: "PDF फ़ाइलों को मार्कडाउन प्रारूप में रूपांतरित करें",
@@ -54,27 +20,18 @@ export const tool: _tool = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "markdown-to-pdf": [
-      "मार्कडाउन फ़ाइलें PDF में रूपांतरित की गईं!",
-      "मार्कडाउन फ़ाइल को PDF में रूपांतरित किया गया है!",
-    ],
     "pdf-to-markdown": [
       "PDF फ़ाइलें मार्कडाउन में रूपांतरित की गईं!",
       "PDF फ़ाइल को मार्कडाउन में रूपांतरित किया गया है!",
     ],
   },
   btnText: {
-    "markdown-to-pdf": [
-      "PDF में रूपांतरित की गई मार्कडाउन फ़ाइलें डाउनलोड करें",
-      "PDF में रूपांतरित की गई मार्कडाउन फ़ाइल डाउनलोड करें",
-    ],
     "pdf-to-markdown": [
       "मार्कडाउन में रूपांतरित की गई PDF फ़ाइलें डाउनलोड करें",
       "मार्कडाउन में रूपांतरित की गई PDF फ़ाइल डाउनलोड करें",
     ],
   },
   backto: {
-    "markdown-to-pdf": "मार्कडाउन से PDF को वापस जाएं",
     "pdf-to-markdown": "PDF से मार्कडाउन को वापस जाएं",
   },
 };
@@ -113,13 +70,6 @@ export const errors: _errors = {
     message: "फ़ाइल एक समर्थित प्रकार नहीं है।",
     types: {
       PDF: "कृपया एक मान्य पीडीएफ़फ़ाइल चुनें।",
-      JPG: "कृपया एक मान्य जेपेग छवि फ़ाइल चुनें।",
-      DOC: "कृपया एक मान्य वर्ड दस्तावेज़ फ़ाइल चुनें।",
-      DOCX: "कृपया एक मान्य वर्ड दस्तावेज़ फ़ाइल चुनें।",
-      XLS: "कृपया एक मान्य एक्सेल स्प्रेडशीट फ़ाइल चुनें।",
-      XLSX: "कृपया एक मान्य एक्सेल स्प्रेडशीट फ़ाइल चुनें।",
-      PPT: "कृपया एक मान्यपावरपॉइंट प्रस्तुति फ़ाइल चुनें।",
-      PPTX: "कृपया एक मान्य पावरपॉइंट प्रस्तुति फ़ाइल चुनें।",
     },
     code: "ERR_INVALID_FILE_TYPE",
   },
@@ -127,21 +77,6 @@ export const errors: _errors = {
     message:
       "फ़ाइल का डाटा भ्रष्ट है और इसे प्रसंस्करण नहीं किया जा सकता है। कृपया एक मान्य फ़ाइल चुनें।",
     code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "फ़ाइल में फ़ॉन्ट गुम हैं। कृपया सुनिश्चित करें कि पीडीएफफ़ाइल में सभी फ़ॉन्ट एम्बेड हैं।",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "फ़ाइल में अवैध छवि डेटा है। कृपया सुनिश्चित करें कि सभी छवियाँ सही ढंग से फ़ॉर्मेटेड हैं।",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "फ़ाइल में सुरक्षा जोखिम हो सकता है और इसे प्रसंस्करण नहीं किया जा सकता है। कृपया एक मान्य फ़ाइल चुनें।",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -161,10 +96,5 @@ export const errors: _errors = {
     message:
       "नेटवर्क में त्रुटि हो गई है। कृपया अपना इंटरनेट कनेक्शन जांचें और पुनः प्रयास करें।",
     code: "ERR_NETWORK",
-  },
-
-  ERR_UPLOAD_COUNT: {
-    message: "कृपया फ्यूजन करने के लिए कम से कम दो फ़ाइलें अपलोड करें।",
-    code: "ERR_UPLOAD_COUNT",
-  },
+  }
 };

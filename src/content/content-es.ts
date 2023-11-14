@@ -10,13 +10,6 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Markdown_to_PDF: {
-    title: "Markdown a PDF",
-    description: "Convertir Markdown a PDF",
-    color: "#6c5ce7",
-    type: ".pdf",
-    to: "/markdown-to-pdf",
-  },
   PDF_to_Markdown: {
     title: "PDF a Markdown",
     description: "Convierte archivos PDF al formato Markdown",
@@ -48,27 +41,18 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "markdown-to-pdf": [
-      "¡Conversión de archivos Markdown a PDF exitosa!",
-      "¡Conversión de archivo Markdown a PDF exitosa!",
-    ],
     "pdf-to-markdown": [
       "¡Conversión de archivos PDF a Markdown exitosa!",
       "¡Conversión de archivo PDF a Markdown exitosa!",
     ],
   },
   btnText: {
-    "markdown-to-pdf": [
-      "Descargar archivos PDF convertidos",
-      "Descargar archivo PDF convertido",
-    ],
     "pdf-to-markdown": [
       "Descargar archivos Markdown convertidos",
       "Descargar archivo Markdown convertido",
     ],
   },
   backto: {
-    "markdown-to-pdf": "Volver a Markdown a PDF",
     "pdf-to-markdown": "Volver a PDF a Markdown",
   },
 };
@@ -87,13 +71,6 @@ export const errors: _errors = {
     message: "El archivo no es un tipo compatible.",
     types: {
       PDF: "Por favor, elija un archivo PDF válido.",
-      JPG: "Por favor, elija un archivo de imagen JPEG válido.",
-      DOC: "Por favor, elija un archivo de documento de Word válido.",
-      DOCX: "Por favor, elija un archivo de documento de Word válido.",
-      XLS: "Por favor, elija un archivo de hoja de cálculo de Excel válido.",
-      XLSX: "Por favor, elija un archivo de hoja de cálculo de Excel válido.",
-      PPT: "Por favor, elija un archivo de presentación de PowerPoint válido.",
-      PPTX: "Por favor, elija un archivo de presentación de PowerPoint válido.",
     },
     code: "ERR_INVALID_FILE_TYPE",
   },
@@ -101,21 +78,6 @@ export const errors: _errors = {
     message:
       "El archivo estácorrupto y no se puede procesar. Por favor, elija un archivo válido.",
     code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "El archivo contiene fuentes faltantes. Por favor, asegúrese de que todas las fuentes estén incrustadas en el archivo PDF.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "El archivo contiene datos de imagen no válidos. Por favor, asegúrese de que todas las imágenes estén correctamente formateadas.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "El archivo contiene un riesgo de seguridad y no se puede procesar. Por favor, elija un archivo válido.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -136,9 +98,5 @@ export const errors: _errors = {
     message:
       "Ha ocurrido un error en la red. Por favor, comprueba tu conexión a internet e inténtalo de nuevo.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "Por favor, suba al menos dos archivos para fusionar.",
-    code: "ERR_UPLOAD_COUNT",
-  },
+  }
 };

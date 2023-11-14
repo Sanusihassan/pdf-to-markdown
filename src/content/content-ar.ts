@@ -9,13 +9,6 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Markdown_to_PDF: {
-    title: "تحويل النص بتنسيق ماركداون إلى ملف PDF",
-    description: "تحويل النص بتنسيق ماركداون إلى ملف PDF",
-    color: "#6c5ce7",
-    type: ".pdf",
-    to: "/markdown-to-pdf",
-  },
   PDF_to_Markdown: {
     title: "PDF إلى Markdown",
     description: "تحويل ملفات PDF إلى تنسيق Markdown",
@@ -34,24 +27,18 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "markdown-to-pdf": [
-      "تم تحويل ملفات Markdown إلى PDF!",
-      "تم تحويل ملف Markdown إلى PDF!",
-    ],
     "pdf-to-markdown": [
       "تم تحويل ملفات PDF إلى Markdown!",
       "تم تحويل ملف PDF إلى Markdown!",
     ],
   },
   btnText: {
-    "markdown-to-pdf": ["تحميل ملفات PDF المحولة", "تحميل ملف PDF المحول"],
     "pdf-to-markdown": [
       "تحميل ملفات Markdown المحولة",
       "تحميل ملف Markdown المحول",
     ],
   },
   backto: {
-    "markdown-to-pdf": "العودة إلى Markdown إلى PDF",
     "pdf-to-markdown": "العودة إلى PDF إلى Markdown",
   },
 };
@@ -83,34 +70,12 @@ export const errors: _errors = {
     message: "الملف غير مدعوم.",
     types: {
       PDF: "يرجى اختيار ملف PDF صالح.",
-      JPG: "يرجى اختيار ملف صورة JPEG صالح.",
-      DOC: "يرجى اختيار ملف مستند Word صالح.",
-      DOCX: "يرجى اختيار ملف مستند Word صالح.",
-      XLS: "يرجى اختيار ملف جدول بيانات Excel صالح.",
-      XLSX: "يرجى اختيارملف جدول بيانات Excel صالح.",
-      PPT: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
-      PPTX: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
     },
     code: "ERR_INVALID_FILE_TYPE",
   },
   FILE_CORRUPT: {
     message: "الملف تالف ولا يمكن معالجته. يرجى اختيار ملف صالح.",
     code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "الملف يحتوي على خطوط أحرف مفقودة. يرجى التأكد من تضمين جميع الخطوط في ملف PDF.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "الملف يحتوي على بيانات صورة غير صالحة. يرجى التأكد من تنسيق جميع الصور بشكل صحيح.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "الملف يحتوي على مخاطر أمان ولا يمكن معالجته. يرجى اختيار ملف صالح.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -130,9 +95,5 @@ export const errors: _errors = {
     message:
       "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "يرجى رفع ملفين على الأقل للدمج.",
-    code: "ERR_UPLOAD_COUNT",
-  },
+  }
 };
