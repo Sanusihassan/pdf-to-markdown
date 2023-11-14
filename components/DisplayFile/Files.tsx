@@ -27,7 +27,7 @@
 //   fileDetailProps,
 // }: FileProps) => {
 //   // const store = useSelector((state: { tool: ToolState }) => state.tool);
-//   const { files, imageUrls, setImageUrls } = useFileStore.getState();
+//   const { files, imageUrls, setImageUrls } = useFileStore();
 
 //   useEffect(() => {}, [files]);
 

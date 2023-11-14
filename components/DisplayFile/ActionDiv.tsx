@@ -27,7 +27,7 @@
 //   fileName,
 // }: ActionProps) => {
 //   // the files:
-//   const { files, setFiles } = useFileStore.getState();
+//   const { files, setFiles } = useFileStore();
 //   const dispatch = useDispatch();
 //   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 //     dispatch(setRerender(!state.rerender));

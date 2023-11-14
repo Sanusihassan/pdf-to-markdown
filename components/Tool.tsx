@@ -14,7 +14,6 @@ import { useDispatch } from "react-redux";
 import { useFileStore } from "../src/file-store";
 import { FileInputForm } from "./Tool/FileInputForm";
 import DownloadFile from "./DownloadFile";
-import Markdown2PDF from "./Markdown2PDF";
 
 export type errorType = {
   response: {
@@ -64,7 +63,7 @@ const Tool: React.FC<ToolProps> = ({
     (state: { tool: ToolState }) => state.tool.errorMessage
   );
   // the files:
-  const { setFiles } = useFileStore.getState();
+  const { setFiles } = useFileStore();
   const dispatch = useDispatch();
   // const dispatch = useDispatch();
   const router = useRouter();
@@ -103,42 +102,39 @@ const Tool: React.FC<ToolProps> = ({
 
   return (
     <>
-      {statePath === "markdown-to-pdf" ? (
-        <Markdown2PDF />
-      ) : (
+      <div
+        className="tools-page container-fluid position-relative"
+        {...(stateShowTool && getRootProps())}
+        onClick={(e) => {
+          e.preventDefault();
+        }}
+      >
+        {isDragActive && (
+          <div className="overlay display-4">{tools.drop_files}</div>
+        )}
         <div
-          className="tools-page container-fluid position-relative"
-          {...(stateShowTool && getRootProps())}
-          onClick={(e) => {
-            e.preventDefault();
-          }}
+          className={`text-center ${
+            !showTool ? "" : "d-flex"
+          } flex-column tools ${stateShowTool ? "" : "d-none"}`}
         >
-          {isDragActive && (
-            <div className="overlay display-4">{tools.drop_files}</div>
-          )}
-          <div
-            className={`text-center ${
-              !showTool ? "" : "d-flex"
-            } flex-column tools ${stateShowTool ? "" : "d-none"}`}
-          >
-            <h1 className="display-3">
-              <bdi>{data.title}</bdi>
-            </h1>
-            <p className="lead">
-              <bdi>{data.description}</bdi>
-            </p>
-            <FileInputForm
-              lang={lang}
-              data={data}
-              errors={errors}
-              tools={tools}
-              acceptedFileTypes={acceptedFileTypes}
-            />
-            <p>{tools.or_drop}</p>
-            <ErrorElement />
-          </div>
-          {/* ) : ( */}
-          {/* <EditPage
+          <h1 className="display-3">
+            <bdi>{data.title}</bdi>
+          </h1>
+          <p className="lead">
+            <bdi>{data.description}</bdi>
+          </p>
+          <FileInputForm
+            lang={lang}
+            data={data}
+            errors={errors}
+            tools={tools}
+            acceptedFileTypes={acceptedFileTypes}
+          />
+          <p>{tools.or_drop}</p>
+          <ErrorElement />
+        </div>
+        {/* ) : ( */}
+        {/* <EditPage
             extension={data.type}
             edit_page={edit_page}
             pages={pages}
@@ -146,10 +142,9 @@ const Tool: React.FC<ToolProps> = ({
             lang={lang}
             errors={errors}
           /> */}
-          <DownloadFile lang={lang} downloadFile={downloadFile} />
-          {/* )} */}
-        </div>
-      )}
+        <DownloadFile lang={lang} downloadFile={downloadFile} />
+        {/* )} */}
+      </div>
     </>
   );
 };
