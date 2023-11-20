@@ -7,16 +7,25 @@ export const tool = {
     to: "/pdf-to-markdown",
   },
 };
-
+// this edit_page options represents merge pdf i want another similar object but for pdf to markdown
+// export const edit_page = {
+//   edit_page_titles: {
+//     merge_pdf: "Merge PDF options",
+//   },
+//   loader_text: "please wait...",
+//   add_more_button: "Add more files",
+//   action_buttons: {
+//     merge_pdf: "Merge PDF",
+//   },
+//   pages: "pages",
+//   page: "page",
+// };
+// please give me this object but translated to ar, es, fr, hi, zh respectively same object same keys but just translate the string values
 export const edit_page = {
-  edit_page_titles: {
-    merge_pdf: "Merge PDF options",
-  },
-  loader_text: "please wait...",
+  edit_page_titles: { pdf_to_markdown: "PDF to Markdown options" },
+  loader_text: "please wait…",
   add_more_button: "Add more files",
-  action_buttons: {
-    merge_pdf: "Merge PDF",
-  },
+  action_buttons: { pdf_to_markdown: "Convert to Markdown" },
   pages: "pages",
   page: "page",
 };

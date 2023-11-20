@@ -36,16 +36,12 @@ export const downloadFile: _downloadFile = {
   },
 };
 
-export const edit_page: _edit_page = {
-  edit_page_titles: {
-    merge_pdf: "PDF फ्यूज़न विकल्प",
-  },
+export const edit_page = {
+  edit_page_titles: { pdf_to_markdown: "पीडीएफ से मार्कडाउन विकल्प" },
   loader_text: "कृपया प्रतीक्षा करें...",
-  add_more_button: "अधिक फ़ाइलें जोड़ें",
-  action_buttons: {
-    merge_pdf: "पीडीएफ विलय करें",
-  },
-  pages: "पृष्ठों",
+  add_more_button: "और फ़ाइलें जोड़ें",
+  action_buttons: { pdf_to_markdown: "मार्कडाउन में परिवर्तित करें" },
+  pages: "पृष्ठ",
   page: "पृष्ठ",
 };
 
@@ -96,5 +92,5 @@ export const errors: _errors = {
     message:
       "नेटवर्क में त्रुटि हो गई है। कृपया अपना इंटरनेट कनेक्शन जांचें और पुनः प्रयास करें।",
     code: "ERR_NETWORK",
-  }
+  },
 };

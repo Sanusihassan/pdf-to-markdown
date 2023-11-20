@@ -34,15 +34,11 @@ export const downloadFile: _downloadFile = {
   },
 };
 
-export const edit_page: _edit_page = {
-  edit_page_titles: {
-    merge_pdf: "合并PDF选项",
-  },
-  loader_text: "请稍等...",
+export const edit_page = {
+  edit_page_titles: { pdf_to_markdown: "PDF 转 Markdown 选项" },
+  loader_text: "请稍候...",
   add_more_button: "添加更多文件",
-  action_buttons: {
-    merge_pdf: "合并PDF",
-  },
+  action_buttons: { pdf_to_markdown: "转换为 Markdown" },
   pages: "页",
   page: "页",
 };
@@ -90,5 +86,5 @@ export const errors: _errors = {
   ERR_NETWORK: {
     message: "网络错误，请检查您的互联网连接并重试。",
     code: "ERR_NETWORK",
-  }
+  },
 };

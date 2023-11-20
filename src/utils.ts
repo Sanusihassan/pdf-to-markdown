@@ -190,22 +190,7 @@ export const validateFiles = (
 ) => {
   const files = Array.from(_files); // convert FileList to File[] array
 
-  let allowedMimeTypes = [
-    "application/pdf",
-    "text/html",
-    "image/jpeg",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-    "application/vnd.ms-powerpoint",
-    "application/vnd.ms-excel",
-  ];
-  // validation for merge-pdf page & empty files
-  if (state.path == "merge-pdf" && files.length <= 1) {
-    dispatch(setErrorMessage(errors.ERR_UPLOAD_COUNT.message));
-    dispatch(setErrorCode("ERR_UPLOAD_COUNT"));
-    return false;
-  }
+  let allowedMimeTypes = ["application/pdf"];
   if (files.length == 0 && (state.click || state.focus)) {
     dispatch(setErrorMessage(errors.NO_FILES_SELECTED.message));
     dispatch(setErrorCode("ERR_NO_FILES_SELECTED"));
@@ -217,18 +202,7 @@ export const validateFiles = (
     extension = extension.replace(".", "").toUpperCase();
     let file_extension = file.name.split(".").pop()?.toUpperCase() || "";
     // this contains all types and some special types that might potentially be of than one extension
-    const types = [
-      "ppt",
-      "pptx",
-      "doc",
-      "docx",
-      "xls",
-      "xlsx",
-      "html",
-      "htm",
-      "jpg",
-      "pdf",
-    ];
+    const types = ["pdf"];
 
     if (!file || !file.name) {
       // handle FILE_CORRUPT error
@@ -258,19 +232,6 @@ export const validateFiles = (
       dispatch(setErrorMessage(errors.EMPTY_FILE.message));
       dispatch(setErrorCode("ERR_EMPTY_FILE"));
       return false;
-    } else if (file.type.startsWith("image/")) {
-      // handle INVALID_IMAGE_DATA error
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        const img = new Image();
-        img.src = reader.result as string;
-        img.onerror = () => {
-          dispatch(setErrorMessage(errors.INVALID_IMAGE_DATA.message));
-          return false;
-        };
-      };
-      return true;
     }
   }
   return true;

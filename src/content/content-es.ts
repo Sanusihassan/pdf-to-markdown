@@ -19,16 +19,12 @@ export const tool: _tool = {
   },
 };
 
-export const edit_page: _edit_page = {
-  edit_page_titles: {
-    merge_pdf: "Opciones para fusionar PDF",
-  },
-  loader_text: "Por favor espera...",
-  add_more_button: "Agrega más archivos",
-  action_buttons: {
-    merge_pdf: "Combinar PDF",
-  },
-  pages: "paginas",
+export const edit_page = {
+  edit_page_titles: { pdf_to_markdown: "Opciones de PDF a Markdown" },
+  loader_text: "por favor espera...",
+  add_more_button: "Agregar más archivos",
+  action_buttons: { pdf_to_markdown: "Convertir a Markdown" },
+  pages: "páginas",
   page: "página",
 };
 
@@ -98,5 +94,5 @@ export const errors: _errors = {
     message:
       "Ha ocurrido un error en la red. Por favor, comprueba tu conexión a internet e inténtalo de nuevo.",
     code: "ERR_NETWORK",
-  }
+  },
 };
