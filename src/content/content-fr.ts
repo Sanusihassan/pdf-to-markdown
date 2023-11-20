@@ -44,15 +44,11 @@ export const downloadFile: _downloadFile = {
   },
 };
 
-export const edit_page: _edit_page = {
-  edit_page_titles: {
-    merge_pdf: "Options de fusion de PDF",
-  },
-  loader_text: "Veuillez patienter...",
+export const edit_page = {
+  edit_page_titles: { pdf_to_markdown: "Options de PDF vers Markdown" },
+  loader_text: "veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
-  action_buttons: {
-    merge_pdf: "Fusionner PDF",
-  },
+  action_buttons: { pdf_to_markdown: "Convertir en Markdown" },
   pages: "pages",
   page: "page",
 };

@@ -5,7 +5,6 @@ import type { errors as _ } from "../../content";
 import { AnyAction } from "@reduxjs/toolkit";
 // import { shallow } from "zustand"
 import {
-  ToolState,
   resetErrorMessage,
   setErrorMessage,
   setIsSubmitted,
@@ -65,38 +64,6 @@ export const handleUpload = async (
     "application/pdf": {
       outputFileMimeType: "application/pdf",
       outputFileName: `${originalFileName}.pdf`,
-    },
-    "application/msword": {
-      outputFileMimeType: "application/msword",
-      outputFileName: `${originalFileName}.docx`,
-    },
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": {
-      outputFileMimeType:
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      outputFileName: `${originalFileName}.docx`,
-    },
-    "application/vnd.ms-excel": {
-      outputFileMimeType: "application/vnd.ms-excel",
-      outputFileName: `${originalFileName}.xlsx`,
-    },
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
-      outputFileMimeType:
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      outputFileName: `${originalFileName}.xlsx`,
-    },
-    "application/vnd.ms-powerpoint": {
-      outputFileMimeType: "application/vnd.ms-powerpoint",
-      outputFileName: `${originalFileName}.pptx`,
-    },
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation":
-      {
-        outputFileMimeType:
-          "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-        outputFileName: `${originalFileName}.pptx`,
-      },
-    "text/plain": {
-      outputFileMimeType: "text/plain",
-      outputFileName: `${originalFileName}.txt`,
     },
   };
 

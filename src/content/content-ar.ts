@@ -43,17 +43,13 @@ export const downloadFile: _downloadFile = {
   },
 };
 
-export const edit_page: _edit_page = {
-  edit_page_titles: {
-    merge_pdf: "خيارات دمج ملف PDF",
-  },
+export const edit_page = {
+  edit_page_titles: { pdf_to_markdown: "خيارات تحويل PDF إلى Markdown" },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
-  action_buttons: {
-    merge_pdf: "دمج PDF",
-  },
-  pages: "صفحة",
-  page: "صفحة واحدة",
+  action_buttons: { pdf_to_markdown: "تحويل إلى Markdown" },
+  pages: "صفحات",
+  page: "صفحة",
 };
 
 export const errors: _errors = {
