@@ -43,7 +43,7 @@ export const handleUpload = async (
   let url;
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {
-    url = `http://127.0.0.1:5000/${state.path}`;
+    url = `https://5000-planetcreat-pdfequipsap-20rnq604504.ws-eu106.gitpod.io/api/${state.path}`;
     // url = `https://5000-planetcreat-pdfequipsap-te4zoi6qkr3.ws-eu102.gitpod.io/${state.path}`;
   } else {
     url = `/api/${state.path}`;
@@ -61,9 +61,9 @@ export const handleUpload = async (
       outputFileMimeType: "application/zip",
       outputFileName: `PDFEquips-${state.path}.zip`,
     },
-    "application/pdf": {
-      outputFileMimeType: "application/pdf",
-      outputFileName: `${originalFileName}.pdf`,
+    "text/markdown": {
+      outputFileMimeType: "text/markdown",
+      outputFileName: `${originalFileName}.md`,
     },
   };
 
@@ -73,9 +73,10 @@ export const handleUpload = async (
     });
     // const originalFileName = files[0]?.name?.split(".").slice(0, -1).join(".");
     const mimeType = response.data.type || response.headers["content-type"];
+    console.log(mimeTypeLookupTable[mimeType])
     const mimeTypeData = mimeTypeLookupTable[mimeType] || {
       outputFileMimeType: mimeType,
-      outputFileName: "",
+      outputFileName: `${originalFileName}.md`,
     };
     const { outputFileMimeType, outputFileName } = mimeTypeData;
 
