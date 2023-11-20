@@ -150,7 +150,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
         href=""
         className="d-none"
         ref={downloadBtn}
-        download="__output.pdf"
+        download="__output.md"
       ></a>
       {/* <div className="my-4">
           </div> */}
