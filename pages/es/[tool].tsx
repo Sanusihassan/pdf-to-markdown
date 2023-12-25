@@ -62,12 +62,6 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
             __html: JSON.stringify(PDFToMarkdownHOWTO_es),
           }}
         />
