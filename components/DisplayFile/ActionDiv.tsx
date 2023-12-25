@@ -27,7 +27,7 @@ export const ActionDiv = ({
   fileName,
 }: ActionProps) => {
   // the files:
-  const { files, setFiles } = useFileStore();
+
   const dispatch = useDispatch();
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     //  const newFiles = store.files.filter((file) => file.name !== item.file.name);
