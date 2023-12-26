@@ -88,9 +88,9 @@ export const getFileDetailsTooltipContent = async (
         const pdf = await getDocument(url).promise;
 
         const pageCount = pdf.numPages || 0;
-        tooltipContent += ` - ${
+        tooltipContent += `</bdi> - <bdi>${
           lang === "ar" && pageCount === 1 ? "" : pageCount + " "
-        }${pageCount > 1 ? pages : page}`;
+        }${pageCount > 1 ? pages : page}</bdi>`;
         URL.revokeObjectURL(url);
         if (!file.size) {
           emptyPDFHandler(dispatch, errors);
