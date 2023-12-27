@@ -49,7 +49,7 @@ export const edit_page = {
   add_more_button: "إضافة المزيد من الملفات",
   action_buttons: { pdf_to_markdown: "تحويل إلى Markdown" },
   pages: "صفحات",
-  page: "صفحة",
+  page: "صفحة واحدة",
 };
 
 export const errors: _errors = {
@@ -91,5 +91,5 @@ export const errors: _errors = {
     message:
       "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
     code: "ERR_NETWORK",
-  }
+  },
 };

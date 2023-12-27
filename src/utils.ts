@@ -2,7 +2,7 @@ import { NextRouter } from "next/router";
 import { Dispatch, useEffect, useMemo, useState } from "react";
 import { AnyAction } from "@reduxjs/toolkit";
 import type { errors as _ } from "../content";
-import { setErrorCode, setErrorMessage, ToolState } from "./store";
+import { setErrorCode, setErrorMessage } from "./store";
 import { getDocument } from "pdfjs-dist";
 import { PDFDocumentProxy, PageViewport, RenderTask } from "pdfjs-dist";
 const pdfjsWorker = await import("pdfjs-dist/build/pdf.worker.entry");
@@ -88,9 +88,13 @@ export const getFileDetailsTooltipContent = async (
         const pdf = await getDocument(url).promise;
 
         const pageCount = pdf.numPages || 0;
-        tooltipContent += `</bdi> - <bdi>${
-          lang === "ar" && pageCount === 1 ? "" : pageCount + " "
-        }${pageCount > 1 ? pages : page}</bdi>`;
+        if (pageCount === 2 && lang === "ar") {
+          tooltipContent += " - صفحتين</bdi>";
+        } else {
+          tooltipContent += ` - ${
+            lang === "ar" && pageCount === 1 ? "" : pageCount + " "
+          }${pageCount > 1 ? pages : page}</bdi>`;
+        }
         URL.revokeObjectURL(url);
         if (!file.size) {
           emptyPDFHandler(dispatch, errors);
