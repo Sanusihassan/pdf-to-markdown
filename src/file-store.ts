@@ -12,7 +12,7 @@ export interface FileStore {
   fileInput: RefObject<HTMLInputElement> | null;
   submitBtn: React.RefObject<HTMLButtonElement> | null;
   downloadBtn: React.RefObject<HTMLAnchorElement> | null;
-  filesLengthOnSubmit: number;
+  filesOnSubmit: string[];
   imageUrls: {
     file: File;
     imageUrl: string;
@@ -29,7 +29,7 @@ export interface FileStore {
       }[]
     >
   >;
-  setFilesLengthOnSubmit(value: number): void;
+  setFilesOnSubmit(value: string[]): void;
 }
 
 export const useFileStore = create<FileStore>((set) => ({
@@ -38,7 +38,7 @@ export const useFileStore = create<FileStore>((set) => ({
   downloadBtn: null,
   submitBtn: null,
   imageUrls: [],
-  filesLengthOnSubmit: 0,
+  filesOnSubmit: [],
   setFiles: (files: FileList | File[]) => {
     const uniqueFiles = new Set<File>();
 
@@ -65,7 +65,7 @@ export const useFileStore = create<FileStore>((set) => ({
         typeof value === "function" ? value(prevState.imageUrls) : value,
     }));
   },
-  setFilesLengthOnSubmit(value: number) {
-    set({ filesLengthOnSubmit: value });
+  setFilesOnSubmit(value: string[]) {
+    set({ filesOnSubmit: value });
   },
 }));
