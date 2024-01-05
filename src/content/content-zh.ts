@@ -11,7 +11,7 @@ import type {
 
 export const tool: _tool = {
   PDF_to_Markdown: {
-    title: "PDF to Markdown",
+    title: "PDF转Markdown",
     seoTitle: "在线将 PDF 转换为 Markdown - PDF 转 Markdown 转换器 | PDFEquips",
     description: "将 PDF 文件转换为 Markdown 格式",
     color: "#FF4136",

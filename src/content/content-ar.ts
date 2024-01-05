@@ -10,7 +10,7 @@ import type {
 
 export const tool: _tool = {
   PDF_to_Markdown: {
-    title: "PDF to Markdown",
+    title: "PDF إلى Markdown",
     seoTitle:
       "تحويل PDF إلى Markdown عبر الإنترنت - محول PDF إلى Markdown | PDFEquips",
     description: "تحويل ملفات PDF إلى تنسيق Markdown",

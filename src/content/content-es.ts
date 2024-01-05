@@ -11,7 +11,7 @@ import type {
 
 export const tool: _tool = {
   PDF_to_Markdown: {
-    title: "PDF to Markdown",
+    title: "PDF a Markdown",
     seoTitle:
       "Convertir PDF a Markdown en línea - Convertidor de PDF a Markdown | PDFEquips",
     description: "Convertir archivos PDF al formato Markdown",
