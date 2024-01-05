@@ -11,14 +11,8 @@ import {
 import { errors } from "../../src/content/content-fr";
 import { useFileStore } from "@/src/file-store";
 import { useRouter } from "next/router";
+import type { tool as _tool } from "../../content";
 import { PDFToMarkdownHOWTO_fr } from "@/src/how-to";
-
-type data_type = {
-  title: string;
-  description: string;
-  color: string;
-  type: string;
-};
 
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
@@ -40,7 +34,13 @@ export async function getStaticProps({
   return { props: { item } };
 }
 
-export default ({ item, lang }: { item: data_type; lang: string }) => {
+export default ({
+  item,
+  lang,
+}: {
+  item: _tool["PDF_to_Markdown"];
+  lang: string;
+}) => {
   const router = useRouter();
   const { asPath } = router;
   const websiteSchema = {
@@ -53,7 +53,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
   return (
     <>
       <Head>
-        <title>{`PDFEquips | ${item.title}`}</title>
+        <title>{item.seoTitle}</title>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

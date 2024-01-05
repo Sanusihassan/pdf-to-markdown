@@ -10,8 +10,10 @@ import type {
 } from "../../content";
 export const tool: _tool = {
   PDF_to_Markdown: {
-    title: "PDF से मार्कडाउन तक",
-    description: "PDF फ़ाइलों को मार्कडाउन प्रारूप में रूपांतरित करें",
+    title: "PDF to Markdown",
+    seoTitle:
+      "PDF से Markdown में रूपांतरित करें ऑनलाइन - PDF से Markdown कनवर्टर | PDFEquips",
+    description: "PDF फ़ाइलें Markdown प्रारूप में बदलें",
     color: "#FF4136",
     type: ".pdf",
     to: "/pdf-to-markdown",

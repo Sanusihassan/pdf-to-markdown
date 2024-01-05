@@ -1,6 +1,8 @@
 export const tool = {
   PDF_to_Markdown: {
     title: "PDF to Markdown",
+    seoTitle:
+      "Convert PDF to Markdown Online - PDF to Markdown Converter | PDFEquips",
     description: "Convert PDF files to Markdown format",
     color: "#FF4136",
     type: ".pdf",
