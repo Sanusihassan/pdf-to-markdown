@@ -28,7 +28,8 @@ export const ActionDiv = ({
 }: ActionProps) => {
   // the files:
 
-  const dispatch = useDispatch();
+
+  const { files, setFiles } = useFileStore();
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     //  const newFiles = store.files.filter((file) => file.name !== item.file.name);
     const newFiles = files.filter((file) => file.name !== fileName);
@@ -48,9 +49,8 @@ export const ActionDiv = ({
 
   return (
     <div
-      className={`action-div d-flex ${
-        extension == ".html" ? "justify-content-end" : "justify-content-between"
-      }`}
+      className={`action-div d-flex ${extension == ".html" ? "justify-content-end" : "justify-content-between"
+        }`}
     >
       <button
         className="btn btn-light"
