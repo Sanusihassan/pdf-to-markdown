@@ -9,7 +9,7 @@ module.exports = withTM({
     includePaths: [path.join(__dirname, "node_modules")],
   },
   assetPrefix: isProd ? "/pdf-to-markdown" : "",
-  output: "standalone",
+  output: "export",
   webpack: (config, { isServer }) => {
     // Only run this configuration on the client side
     if (!isServer) {
