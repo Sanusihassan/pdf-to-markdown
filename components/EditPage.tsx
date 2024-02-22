@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import DisplayFile from "./DisplayFile";
 import {
   useEffect,
@@ -63,9 +62,6 @@ const EditPage = ({
       dispatch(resetErrorMessage());
     }
   }, [files, errorCode]);
-
-  const router = useRouter();
-  let k = router.asPath.replace(/^\/[a-z]{2}\//, "").replace(/^\//, "");
   // gearRef
   const gearRef = useRef(null);
   return (
@@ -129,7 +125,7 @@ const EditPage = ({
           <bdi>
             {
               edit_page.edit_page_titles[
-              k.replace(/-/g, "_") as keyof typeof edit_page.edit_page_titles
+              path.replace(/-/g, "_") as keyof typeof edit_page.edit_page_titles
               ]
             }
           </bdi>
