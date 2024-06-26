@@ -7,22 +7,23 @@ export const tool = {
     color: "#FF4136",
     type: ".pdf",
     to: "/pdf-to-markdown",
+    features: [
+      {
+        title: "Free and Easy to Use",
+        description: "PDFEquips offers a free and user-friendly PDF to Markdown conversion service without the need for registration or providing personal information."
+      },
+      {
+        title: "Accurate Conversion",
+        description: "Our tool ensures accurate conversion of PDF documents to Markdown format, preserving the original formatting and content as much as possible."
+      },
+      {
+        title: "Secure Processing",
+        description: "All files uploaded to our servers for conversion are encrypted using TLS. Your files are automatically deleted from our servers after the conversion process is complete. For more details, please see our privacy policy."
+      }
+    ]
   },
 };
-// this edit_page options represents merge pdf i want another similar object but for pdf to markdown
-// export const edit_page = {
-//   edit_page_titles: {
-//     merge_pdf: "Merge PDF options",
-//   },
-//   loader_text: "please wait...",
-//   add_more_button: "Add more files",
-//   action_buttons: {
-//     merge_pdf: "Merge PDF",
-//   },
-//   pages: "pages",
-//   page: "page",
-// };
-// please give me this object but translated to ar, es, fr, hi, zh respectively same object same keys but just translate the string values
+
 export const edit_page = {
   edit_page_titles: { pdf_to_markdown: "PDF to Markdown options" },
   loader_text: "please wait…",
@@ -58,6 +59,13 @@ export const downloadFile = {
     "pdf-to-markdown": "Back To PDF to Markdown",
   },
 };
+
+export const footer = {
+  brand: "PDFEquips",
+  terms: "terms",
+  conditions: "conditions",
+  privacy_policy: "privacy policy",
+}
 
 export const errors = {
   EMPTY_FILE: {

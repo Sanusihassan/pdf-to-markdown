@@ -18,6 +18,21 @@ export const tool: _tool = {
     color: "#FF4136",
     type: ".pdf",
     to: "/pdf-to-markdown",
+    features: [
+      {
+        title: "Gratis y Fácil de Usar",
+        description: "PDFEquips ofrece un servicio gratuito y fácil de usar para la conversión de PDF a Markdown sin necesidad de registro ni proporcionar información personal."
+      },
+      {
+        title: "Conversión Precisa",
+        description: "Nuestra herramienta asegura una conversión precisa de documentos PDF a formato Markdown, preservando el formato y contenido original tanto como sea posible."
+      },
+      {
+        title: "Procesamiento Seguro",
+        description: "Todos los archivos subidos a nuestros servidores para la conversión están encriptados utilizando TLS. Sus archivos se eliminan automáticamente de nuestros servidores después de completar el proceso de conversión. Para más detalles, por favor consulte nuestra política de privacidad."
+      }
+    ]
+
   },
 };
 
@@ -54,6 +69,14 @@ export const downloadFile: _downloadFile = {
     "pdf-to-markdown": "Volver a PDF a Markdown",
   },
 };
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "términos",
+  conditions: "condiciones",
+  privacy_policy: "política de privacidad",
+};
+
 
 export const errors: _errors = {
   EMPTY_FILE: {

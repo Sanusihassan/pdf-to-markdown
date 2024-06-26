@@ -17,6 +17,21 @@ export const tool: _tool = {
     color: "#FF4136",
     type: ".pdf",
     to: "/pdf-to-markdown",
+    features: [
+      {
+        title: "完全免费且易于使用",
+        description: "PDFEquips 提供免费的 PDF 转 Markdown 转换服务，无需注册或提供个人信息，操作简单方便。"
+      },
+      {
+        title: "精确转换",
+        description: "我们的工具确保将 PDF 文档精确地转换为 Markdown 格式，尽可能保留原始格式和内容。"
+      },
+      {
+        title: "安全处理",
+        description: "上传到我们服务器进行转换的所有文件都使用 TLS 加密。转换过程完成后，您的文件会自动从我们的服务器中删除。详情请参阅我们的隐私政策。"
+      }
+    ]
+
   },
 };
 
@@ -49,6 +64,13 @@ export const tools: _tools = {
   or_drop: "或将文件拖放到此处",
   files: "文件",
   drop_files: "在此处拖放文件",
+};
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "条款",
+  conditions: "条件",
+  privacy_policy: "隐私政策",
 };
 
 export const errors: _errors = {

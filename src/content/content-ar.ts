@@ -17,6 +17,21 @@ export const tool: _tool = {
     color: "#FF4136",
     type: ".pdf",
     to: "/pdf-to-markdown",
+    features: [
+      {
+        title: "مجاني وسهل الاستخدام",
+        description: "تقدم PDFEquips خدمة تحويل PDF إلى Markdown مجانًا وسهلة الاستخدام دون الحاجة إلى التسجيل أو تقديم المعلومات الشخصية."
+      },
+      {
+        title: "تحويل دقيق",
+        description: "تضمن أداتنا تحويلًا دقيقًا لمستندات PDF إلى تنسيق Markdown، مع الحفاظ على التنسيق والمحتوى الأصليين قدر الإمكان."
+      },
+      {
+        title: "معالجة آمنة",
+        description: "جميع الملفات التي تم تحميلها إلى خوادمنا للتحويل مشفرة باستخدام TLS. يتم حذف ملفاتك تلقائيًا من خوادمنا بعد اكتمال عملية التحويل. لمزيد من التفاصيل، يرجى مراجعة سياسة الخصوصية الخاصة بنا."
+      }
+    ]
+
   },
 };
 
@@ -52,6 +67,13 @@ export const edit_page = {
   action_buttons: { pdf_to_markdown: "تحويل إلى Markdown" },
   pages: "صفحات",
   page: "صفحة واحدة",
+};
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "الشروط",
+  conditions: "والأحكام",
+  privacy_policy: "سياسة الخصوصية",
 };
 
 export const errors: _errors = {
